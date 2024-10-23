@@ -9,11 +9,11 @@
         <copyright>icebear</copyright>
         <lastBuildDate>Wed, 23 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://ice-bear259.github.io/categories/%E5%85%A5%E9%97%A8/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Python入门基础</title>
-        <link>https://ice-bear259.github.io/p/test-chinese/</link>
+        <link>https://ice-bear259.github.io/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/</link>
         <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://ice-bear259.github.io/p/test-chinese/</guid>
-        <description>&lt;img src="https://ice-bear259.github.io/p/test-chinese/aespa.jpg" alt="Featured image of post Python入门基础" /&gt;&lt;h6 id=&#34;1global关键字&#34;&gt;1.global关键字：
+        <guid>https://ice-bear259.github.io/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/</guid>
+        <description>&lt;img src="https://ice-bear259.github.io/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/aespa.jpg" alt="Featured image of post Python入门基础" /&gt;&lt;h6 id=&#34;1global关键字&#34;&gt;1.global关键字：
 &lt;/h6&gt;&lt;p&gt;​	使用global关键字可以在函数内部声明变量为全局变量&lt;/p&gt;
 &lt;h6 id=&#34;2列表的下标索引&#34;&gt;2.列表的下标索引
 &lt;/h6&gt;&lt;p&gt;​	1.正向索引，跟数组一样，第一个元素从0开始&lt;/p&gt;
