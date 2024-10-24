@@ -32,13 +32,13 @@
 &lt;/h6&gt;&lt;p&gt;​	元组  只读  不可修改      若在元组里嵌套了列表，列表是可以修改的&lt;/p&gt;
 &lt;p&gt;​	用括号定义	如：t1 = (1, &amp;ldquo;hello&amp;rdquo;, True)&lt;/p&gt;
 &lt;p&gt;​	定义单个元素的元组要加个逗号，否则是字符串类型或其他类型，如下：&lt;/p&gt;
-&lt;p&gt;​			&lt;img src=&#34;C:%5cUsers%5c86156%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240920220553161.png&#34;
+&lt;p&gt;​			&lt;img src=&#34;https://s2.loli.net/2024/10/24/SgHqzOLxKTcsJP7.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;image-20240920220553161&#34;
+		alt=&#34; 2024-09-20 220506.png&#34;
 	
 	
 &gt;&lt;/p&gt;
@@ -47,40 +47,58 @@
 &lt;p&gt;​	统计某元素在元组中的数量：元组.count(元素)&lt;/p&gt;
 &lt;p&gt;​	统计元组内有多少个元素：len(元组)&lt;/p&gt;
 &lt;h6 id=&#34;5字符串的定义和操作&#34;&gt;5.字符串的定义和操作
-&lt;/h6&gt;&lt;p&gt;​	&lt;img src=&#34;C:%5cUsers%5c86156%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240920224047136.png&#34;
+&lt;/h6&gt;&lt;p&gt;​	&lt;img src=&#34;https://s2.loli.net/2024/10/24/mbAMRouN5XUet7V.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;image-20240920224047136&#34;
+		alt=&#34;image-20240920224047136.png&#34;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;​	&lt;img src=&#34;C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20240920223828751.png&#34; alt=&#34;image-20240920223828751&#34; style=&#34;zoom:80%;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;​	&lt;img src=&#34;C:%5cUsers%5c86156%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240920225343526.png&#34;
+&lt;p&gt;​	&lt;img src=&#34;https://s2.loli.net/2024/10/24/ETYl1fFhGUiO82r.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;image-20240920225343526&#34;
+		alt=&#34;image-20240920223828751.png&#34;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;​	&lt;img src=&#34;C:%5cUsers%5c86156%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240920225421671.png&#34;
+&lt;p&gt;​	&lt;img src=&#34;https://s2.loli.net/2024/10/24/nGLKQ9oewFXhAsP.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;image-20240920225421671&#34;
+		alt=&#34;image-20240920225343526.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;​	&lt;img src=&#34;https://s2.loli.net/2024/10/24/G25dbxMThkreYJH.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240920225421671.png&#34;
 	
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;​	统计字符串的长度：len(字符串)&lt;/p&gt;
 &lt;h6 id=&#34;6序列的切片&#34;&gt;6.序列的切片
-&lt;/h6&gt;&lt;p&gt;​	![屏幕截图 2024-09-20 230819](C:\Users\86156\Pictures\Screenshots\屏幕截图 2024-09-20 230819.png)&lt;/p&gt;
+&lt;/h6&gt;&lt;p&gt;​	&lt;img src=&#34;https://s2.loli.net/2024/10/24/lGpTZ1c3KqMEjOw.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34; 2024-09-20 230819.png&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h6 id=&#34;7集合的定义和操作&#34;&gt;7.集合的定义和操作
 &lt;/h6&gt;&lt;p&gt;​	定义一个空集合：集合 = set()&lt;/p&gt;
 &lt;p&gt;​	不可重复，自动去重	无序，不支持下标索引&lt;/p&gt;
@@ -88,15 +106,33 @@
 &lt;p&gt;​	移除元素：集合.remove(元素)&lt;/p&gt;
 &lt;p&gt;​	随取出一个元素：集合.pop()	取出该元素后，集合将不再包含被取			   出的元素&lt;/p&gt;
 &lt;p&gt;​	清空集合：集合.clear()&lt;/p&gt;
-&lt;img src=&#34;C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20240921140913473.png&#34; alt=&#34;image-20240921140913473&#34; style=&#34;zoom:80%;&#34; /&gt;
-&lt;img src=&#34;C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20240921141306002.png&#34; alt=&#34;image-20240921141306002&#34; style=&#34;zoom: 67%;&#34; /&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5c86156%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240921141552448.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/10/24/bMnk4AuqV162wlg.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;image-20240921141552448&#34;
+		alt=&#34; 2024-09-21 140909.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/10/24/AKHRqZYy6aMB843.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240921141306002.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/10/24/afodyjKbuR6i8hH.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240921141552448.png&#34;
 	
 	
 &gt;&lt;/p&gt;
@@ -104,19 +140,28 @@
 &lt;p&gt;​	集合不支持下标索引，不能用while循环，可以用for循环&lt;/p&gt;
 &lt;h6 id=&#34;8字典的定义和操作&#34;&gt;8.字典的定义和操作
 &lt;/h6&gt;&lt;p&gt;​	不能使用下标索引	使用key来取得对应的value&lt;/p&gt;
-&lt;p&gt;​	&lt;img src=&#34;C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20240921155138938.png&#34; alt=&#34;image-20240921155138938&#34; style=&#34;zoom:80%;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;​	删除元素：字典.pop(key)	能返回删除的元素的值&lt;/p&gt;
-&lt;p&gt;​	清空元素：字典.clear()&lt;/p&gt;
-&lt;p&gt;​	获取全部的key：字典.keys()	就能通过获取的key遍历字典&lt;/p&gt;
-&lt;p&gt;​	统计字典元素个数：len(字典)&lt;/p&gt;
-&lt;h6 id=&#34;9五种数据容器特点对比&#34;&gt;9.五种数据容器特点对比
-&lt;/h6&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5c86156%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240921162220546.png&#34;
+&lt;p&gt;​	&lt;img src=&#34;https://s2.loli.net/2024/10/24/Y7bysj9Zru5T18L.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;image-20240921162220546&#34;
+		alt=&#34;image-20240921155138938.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;​	删除元素：字典.pop(key)	能返回删除的元素的值&lt;/p&gt;
+&lt;p&gt;​	清空元素：字典.clear()&lt;/p&gt;
+&lt;p&gt;​	获取全部的key：字典.keys()	就能通过获取的key遍历字典&lt;/p&gt;
+&lt;p&gt;​	统计字典元素个数：len(字典)&lt;/p&gt;
+&lt;h6 id=&#34;9五种数据容器特点对比&#34;&gt;9.五种数据容器特点对比
+&lt;/h6&gt;&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/10/24/2ikAxEnFzpMdthZ.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240921162220546.png&#34;
 	
 	
 &gt;&lt;/p&gt;
@@ -127,60 +172,114 @@
 &lt;h6 id=&#34;10函数的多种参数使用形式&#34;&gt;10.函数的多种参数使用形式
 &lt;/h6&gt;&lt;p&gt;​	位置参数：形参与实参位置一一对应&lt;/p&gt;
 &lt;p&gt;​	关键字参数：函数调用时通过&amp;quot;键=值&amp;quot;形式传递参数，如下：&lt;/p&gt;
-&lt;img src=&#34;C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20240921165355947.png&#34; alt=&#34;image-20240921165355947&#34; style=&#34;zoom:80%;&#34; /&gt;
-&lt;p&gt;​	缺省参数：定义函数时给形参设默认值，且有默认值的形参要放在所有形参			   的最后&lt;/p&gt;
-&lt;p&gt;​	不定长：&lt;/p&gt;
-&lt;img src=&#34;C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20240921170827737.png&#34; alt=&#34;image-20240921170827737&#34; style=&#34;zoom:80%;&#34; /&gt;
-&lt;img src=&#34;C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20240921170853184.png&#34; alt=&#34;image-20240921170853184&#34; style=&#34;zoom:80%;&#34; /&gt;
-&lt;h6 id=&#34;11函数作为参数传递&#34;&gt;11.函数作为参数传递
-&lt;/h6&gt;&lt;p&gt;​		&lt;img src=&#34;C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20240921173625451.png&#34; alt=&#34;image-20240921173625451&#34; style=&#34;zoom:80%;&#34; /&gt;&lt;/p&gt;
-&lt;h6 id=&#34;12lambda匿名函数&#34;&gt;12.lambda匿名函数
-&lt;/h6&gt;&lt;p&gt;​	无名称的匿名函数只可以临时使用一次&lt;/p&gt;
-&lt;p&gt;​	函数体只能写一行代码，无法写多行代码&lt;/p&gt;
-&lt;img src=&#34;C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20240921174806641.png&#34; alt=&#34;image-20240921174806641&#34; style=&#34;zoom: 67%;&#34; /&gt;
-&lt;h6 id=&#34;13文件的读取操作&#34;&gt;13.文件的读取操作
-&lt;/h6&gt;&lt;p&gt;​	打开文件：&lt;/p&gt;
-&lt;p&gt;​		&lt;img src=&#34;C:%5cUsers%5c86156%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240922152943715.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/10/24/Aw6UVImjYc4DaTx.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;image-20240922152943715&#34;
+		alt=&#34;image-20240922152943715.png&#34;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;​		&lt;img src=&#34;C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20240922153054980.png&#34; alt=&#34;image-20240922153054980&#34; style=&#34;zoom:80%;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;​	读取文件：- read()&lt;/p&gt;
-&lt;p&gt;​		&lt;img src=&#34;C:%5cUsers%5c86156%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240922153211306.png&#34;
+&lt;p&gt;​	缺省参数：定义函数时给形参设默认值，且有默认值的形参要放在所有形参			   的最后&lt;/p&gt;
+&lt;p&gt;​	不定长：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/10/24/rthZnEw6MCg5Nbv.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;image-20240922153211306&#34;
+		alt=&#34;image-20240921170827737.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/10/24/lEG8iQkJeY6bNo4.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240921170853184.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h6 id=&#34;11函数作为参数传递&#34;&gt;11.函数作为参数传递
+&lt;/h6&gt;&lt;p&gt;​		&lt;img src=&#34;https://s2.loli.net/2024/10/24/D8so7NbQGeX3HmS.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240921173625451.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h6 id=&#34;12lambda匿名函数&#34;&gt;12.lambda匿名函数
+&lt;/h6&gt;&lt;p&gt;​	无名称的匿名函数只可以临时使用一次&lt;/p&gt;
+&lt;p&gt;​	函数体只能写一行代码，无法写多行代码&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/10/24/gewhSH2WCyi7tVJ.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240921174806641.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h6 id=&#34;13文件的读取操作&#34;&gt;13.文件的读取操作
+&lt;/h6&gt;&lt;p&gt;​	打开文件：&lt;/p&gt;
+&lt;p&gt;​		&lt;img src=&#34;https://s2.loli.net/2024/10/24/Aw6UVImjYc4DaTx.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240922152943715.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;​		&lt;img src=&#34;https://s2.loli.net/2024/10/24/5zMNGLqeaxfhQCi.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240922153054980.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;​	读取文件：- read()&lt;/p&gt;
+&lt;p&gt;​		&lt;img src=&#34;https://s2.loli.net/2024/10/24/bLD9ovB6aIWypfm.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240922153211306.png&#34;
 	
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;​	读取文件：- readlines()&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5c86156%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240922153310278.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/10/24/iY7C3oEPjO8GnaD.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;image-20240922153310278&#34;
+		alt=&#34;image-20240922153310278.png&#34;
 	
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;​	读取文件：- readline()&lt;/p&gt;
-&lt;p&gt;​		&lt;img src=&#34;C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20240922153636734.png&#34; alt=&#34;image-20240922153636734&#34; style=&#34;zoom:50%;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;​		&lt;img src=&#34;https://s2.loli.net/2024/10/24/z3GMvLHgl179jKA.png&#34; alt=&#34;image-20240922153636734.png&#34; style=&#34;zoom: 50%;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;​	使用for循环读取文件每一行&lt;/p&gt;
 &lt;p&gt;​	关闭文件：    .close()&lt;/p&gt;
 &lt;p&gt;​	with open 语法：读取等操作完成后自动关闭文件&lt;/p&gt;
-&lt;p&gt;​		&lt;img src=&#34;C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20240922154351229.png&#34; alt=&#34;image-20240922154351229&#34; style=&#34;zoom: 50%;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;​		&lt;img src=&#34;https://s2.loli.net/2024/10/24/YByzMUNfFtE5W1q.png&#34; alt=&#34;image-20240922154351229.png&#34; style=&#34;zoom: 50%;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;​	总结：&lt;/p&gt;
-&lt;p&gt;​	&lt;img src=&#34;C:\Users\86156\AppData\Roaming\Typora\typora-user-images\image-20240922154510750.png&#34; alt=&#34;image-20240922154510750&#34; style=&#34;zoom: 33%;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;​	&lt;img src=&#34;https://s2.loli.net/2024/10/24/db5crNiqY47GxVZ.png&#34; alt=&#34;image-20240922154510750.png&#34; style=&#34;zoom:33%;&#34; /&gt;&lt;/p&gt;
 &lt;h6 id=&#34;14文件的写出操作&#34;&gt;14.文件的写出操作
 &lt;/h6&gt;&lt;p&gt;​	w 操作：文件不存在会创建文件，文件存在会清空文件内容，写入我们想写的&lt;/p&gt;
 &lt;p&gt;​	write()写入内容，flush()刷新内容到硬盘中&lt;/p&gt;
