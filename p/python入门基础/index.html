@@ -282,15 +282,23 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li>
-      <ol>
-        <li>
-          <ol>
-            <li></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
+    <li><a href="#1-global关键字">1. global关键字</a></li>
+    <li><a href="#2-列表的下标索引">2. 列表的下标索引</a></li>
+    <li><a href="#3-列表的常用操作方法">3. 列表的常用操作方法</a></li>
+    <li><a href="#4-元组的定义和操作">4. 元组的定义和操作</a></li>
+    <li><a href="#5-字符串的定义和操作">5. 字符串的定义和操作</a></li>
+    <li><a href="#6-序列的切片">6. 序列的切片</a></li>
+    <li><a href="#7-集合的定义和操作">7. 集合的定义和操作</a></li>
+    <li><a href="#8-字典的定义和操作">8. 字典的定义和操作</a></li>
+    <li><a href="#9-五种数据容器特点对比">9. 五种数据容器特点对比</a></li>
+    <li><a href="#10-函数的多种参数使用形式">10. 函数的多种参数使用形式</a></li>
+    <li><a href="#11-函数作为参数传递">11. 函数作为参数传递</a></li>
+    <li><a href="#12-lambda匿名函数">12. lambda匿名函数</a></li>
+    <li><a href="#13-文件的读取操作">13. 文件的读取操作</a></li>
+    <li><a href="#14-文件的写出操作">14. 文件的写出操作</a></li>
+    <li><a href="#15-异常捕获">15. 异常捕获</a></li>
+    <li><a href="#16-自定义模块并导入">16. 自定义模块并导入</a></li>
+    <li><a href="#17-json数据格式的转换">17. JSON数据格式的转换</a></li>
   </ol>
 </nav>
         </div>
@@ -372,292 +380,404 @@
     <section class="article-content">
     
     
-    <h6 id="1global关键字">1.global关键字：
-</h6><p>​	使用global关键字可以在函数内部声明变量为全局变量</p>
-<h6 id="2列表的下标索引">2.列表的下标索引
-</h6><p>​	1.正向索引，跟数组一样，第一个元素从0开始</p>
-<p>​	2.反向索引，最后一个元素下标为-1，向前依次-1</p>
-<h6 id="3列表的常用操作方法">3.列表的常用操作方法
-</h6><p>​	查询下标：列表.index(元素)    若该元素不存在则会报错</p>
-<p>​	插入元素：列表.insert(下标，元素)</p>
-<p>​	追加元素：列表.append(元素)    该元素追加到列表尾部</p>
-<p>​	追加一批元素：列表.extend(其他列表)    将该列表追加到原本列表的尾部</p>
-<p>​	删除元素：第一种，del 列表[下标]	第二种，列表.pop(下标)，该方法能			   返回删除的元素</p>
-<p>​	删除某元素在列表中的第一项：列表.remove(元素)</p>
-<p>​	清空列表：列表.clear()</p>
-<p>​	统计某元素在列表中的数量：列表.count(元素)</p>
-<p>​	统计列表内有多少个元素：len(列表)</p>
-<h6 id="4元组的定义和操作">4.元组的定义和操作
-</h6><p>​	元组  只读  不可修改      若在元组里嵌套了列表，列表是可以修改的</p>
-<p>​	用括号定义	如：t1 = (1, &ldquo;hello&rdquo;, True)</p>
-<p>​	定义单个元素的元组要加个逗号，否则是字符串类型或其他类型，如下：</p>
-<p>​			<img src="https://s2.loli.net/2024/10/24/SgHqzOLxKTcsJP7.png"
+    <h1 id="python基础笔记">Python基础笔记
+</h1><h2 id="1-global关键字">1. global关键字
+</h2><p>使用<code>global</code>关键字可以在函数内部声明变量为全局变量。</p>
+<h2 id="2-列表的下标索引">2. 列表的下标索引
+</h2><ul>
+<li>正向索引：第一个元素从0开始。</li>
+<li>反向索引：最后一个元素下标为-1，向前依次-1。</li>
+</ul>
+<h2 id="3-列表的常用操作方法">3. 列表的常用操作方法
+</h2><ul>
+<li>查询下标：<code>列表.index(元素)</code>，若该元素不存在则会报错。</li>
+<li>插入元素：<code>列表.insert(下标, 元素)</code>。</li>
+<li>追加元素：<code>列表.append(元素)</code>，该元素追加到列表尾部。</li>
+<li>追加一批元素：<code>列表.extend(其他列表)</code>，将该列表追加到原本列表的尾部。</li>
+<li>删除元素：
+<ul>
+<li><code>del 列表[下标]</code></li>
+<li><code>列表.pop(下标)</code>，该方法能返回删除的元素。</li>
+</ul>
+</li>
+<li>删除某元素在列表中的第一项：<code>列表.remove(元素)</code>。</li>
+<li>清空列表：<code>列表.clear()</code>。</li>
+<li>统计某元素在列表中的数量：<code>列表.count(元素)</code>。</li>
+<li>统计列表内有多少个元素：<code>len(列表)</code>。</li>
+</ul>
+<h2 id="4-元组的定义和操作">4. 元组的定义和操作
+</h2><p>元组只读，不可修改（若在元组里嵌套了列表，列表是可以修改的）。</p>
+<ul>
+<li>用括号定义：如<code>t1 = (1, &quot;hello&quot;, True)</code>。</li>
+<li>定义单个元素的元组要加个逗号，否则是字符串类型或其他类型。</li>
+<li>元组下标索引与列表一致。</li>
+<li>查询下标：<code>元组.index(元素)</code>，若该元素不存在则会报错。</li>
+<li>统计某元素在元组中的数量：<code>元组.count(元素)</code>。</li>
+<li>统计元组内有多少个元素：<code>len(元组)</code>。</li>
+</ul>
+<h2 id="5-字符串的定义和操作">5. 字符串的定义和操作
+</h2><p><img src="https://s2.loli.net/2024/10/24/mbAMRouN5XUet7V.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt=" 2024-09-20 220506.png"
+		alt="字符串定义和操作"
 	
 	
-></p>
-<p>​	元组下标索引与列表一致</p>
-<p>​	查询下标：元组.index(元素)    若该元素不存在则会报错</p>
-<p>​	统计某元素在元组中的数量：元组.count(元素)</p>
-<p>​	统计元组内有多少个元素：len(元组)</p>
-<h6 id="5字符串的定义和操作">5.字符串的定义和操作
-</h6><p>​	<img src="https://s2.loli.net/2024/10/24/mbAMRouN5XUet7V.png"
+><br>
+<img src="https://s2.loli.net/2024/10/24/ETYl1fFhGUiO82r.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt="image-20240920224047136.png"
+		alt="字符串方法"
 	
 	
-></p>
-<p>​	<img src="https://s2.loli.net/2024/10/24/ETYl1fFhGUiO82r.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240920223828751.png"
-	
-	
-></p>
-<p>​	<img src="https://s2.loli.net/2024/10/24/nGLKQ9oewFXhAsP.png"
+><br>
+<img src="https://s2.loli.net/2024/10/24/nGLKQ9oewFXhAsP.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt="image-20240920225343526.png"
+		alt="字符串格式化"
 	
 	
-></p>
-<p>​	<img src="https://s2.loli.net/2024/10/24/G25dbxMThkreYJH.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240920225421671.png"
-	
-	
-></p>
-<p>​	统计字符串的长度：len(字符串)</p>
-<h6 id="6序列的切片">6.序列的切片
-</h6><p>​	<img src="https://s2.loli.net/2024/10/24/lGpTZ1c3KqMEjOw.png"
+><br>
+<img src="https://s2.loli.net/2024/10/24/G25dbxMThkreYJH.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt=" 2024-09-20 230819.png"
+		alt="字符串其他操作"
 	
 	
 ></p>
-<h6 id="7集合的定义和操作">7.集合的定义和操作
-</h6><p>​	定义一个空集合：集合 = set()</p>
-<p>​	不可重复，自动去重	无序，不支持下标索引</p>
-<p>​	添加元素：集合.add(元素)</p>
-<p>​	移除元素：集合.remove(元素)</p>
-<p>​	随取出一个元素：集合.pop()	取出该元素后，集合将不再包含被取			   出的元素</p>
-<p>​	清空集合：集合.clear()</p>
+<ul>
+<li>统计字符串的长度：<code>len(字符串)</code>。</li>
+</ul>
+<h2 id="6-序列的切片">6. 序列的切片
+</h2><p><img src="https://s2.loli.net/2024/10/24/lGpTZ1c3KqMEjOw.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="序列切片"
+	
+	
+></p>
+<h2 id="7-集合的定义和操作">7. 集合的定义和操作
+</h2><ul>
+<li>定义一个空集合：<code>集合 = set()</code>。</li>
+<li>不可重复，自动去重；无序，不支持下标索引。</li>
+<li>添加元素：<code>集合.add(元素)</code>。</li>
+<li>移除元素：<code>集合.remove(元素)</code>。</li>
+<li>随取出一个元素：<code>集合.pop()</code>，取出该元素后，集合将不再包含被取出的元素。</li>
+<li>清空集合：<code>集合.clear()</code>。</li>
+</ul>
 <p><img src="https://s2.loli.net/2024/10/24/bMnk4AuqV162wlg.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt=" 2024-09-21 140909.png"
+		alt="集合操作"
 	
 	
-></p>
-<p><img src="https://s2.loli.net/2024/10/24/AKHRqZYy6aMB843.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240921141306002.png"
-	
-	
-></p>
-<p><img src="https://s2.loli.net/2024/10/24/afodyjKbuR6i8hH.png"
+><br>
+<img src="https://s2.loli.net/2024/10/24/AKHRqZYy6aMB843.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt="image-20240921141552448.png"
+		alt="集合运算"
 	
 	
-></p>
-<p>​	统计集合元素数量：len(集合)</p>
-<p>​	集合不支持下标索引，不能用while循环，可以用for循环</p>
-<h6 id="8字典的定义和操作">8.字典的定义和操作
-</h6><p>​	不能使用下标索引	使用key来取得对应的value</p>
-<p>​	<img src="https://s2.loli.net/2024/10/24/Y7bysj9Zru5T18L.png"
+><br>
+<img src="https://s2.loli.net/2024/10/24/afodyjKbuR6i8hH.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt="image-20240921155138938.png"
+		alt="集合其他操作"
 	
 	
 ></p>
-<p>​	删除元素：字典.pop(key)	能返回删除的元素的值</p>
-<p>​	清空元素：字典.clear()</p>
-<p>​	获取全部的key：字典.keys()	就能通过获取的key遍历字典</p>
-<p>​	统计字典元素个数：len(字典)</p>
-<h6 id="9五种数据容器特点对比">9.五种数据容器特点对比
-</h6><p><img src="https://s2.loli.net/2024/10/24/2ikAxEnFzpMdthZ.png"
+<ul>
+<li>统计集合元素数量：<code>len(集合)</code>。</li>
+<li>集合不支持下标索引，不能用while循环，可以用for循环。</li>
+</ul>
+<h2 id="8-字典的定义和操作">8. 字典的定义和操作
+</h2><ul>
+<li>不能使用下标索引，使用key来取得对应的value。</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/10/24/Y7bysj9Zru5T18L.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt="image-20240921162220546.png"
+		alt="字典定义"
 	
 	
 ></p>
-<p>​	类型转换：</p>
-<p>​		容器转列表：list(容器)	容器转元组：tuple(容器)</p>
-<p>​		容器转字符串：str(容器)	容器转集合：set(容器)</p>
-<p>​	容器通用排序功能：sorted(容器, reverse=True)    reverse默认为False可以					  不写</p>
-<h6 id="10函数的多种参数使用形式">10.函数的多种参数使用形式
-</h6><p>​	位置参数：形参与实参位置一一对应</p>
-<p>​	关键字参数：函数调用时通过&quot;键=值&quot;形式传递参数，如下：</p>
+<ul>
+<li>删除元素：<code>字典.pop(key)</code>，能返回删除的元素的值。</li>
+<li>清空元素：<code>字典.clear()</code>。</li>
+<li>获取全部的key：<code>字典.keys()</code>，就能通过获取的key遍历字典。</li>
+<li>统计字典元素个数：<code>len(字典)</code>。</li>
+</ul>
+<h2 id="9-五种数据容器特点对比">9. 五种数据容器特点对比
+</h2><p><img src="https://s2.loli.net/2024/10/24/2ikAxEnFzpMdthZ.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="数据容器特点对比"
+	
+	
+></p>
+<ul>
+<li>类型转换：
+<ul>
+<li>容器转列表：<code>list(容器)</code></li>
+<li>容器转元组：<code>tuple(容器)</code></li>
+<li>容器转字符串：<code>str(容器)</code></li>
+<li>容器转集合：<code>set(容器)</code></li>
+</ul>
+</li>
+<li>容器通用排序功能：<code>sorted(容器, reverse=True)</code>（<code>reverse</code>默认为<code>False</code>可以不写）。</li>
+</ul>
+<h2 id="10-函数的多种参数使用形式">10. 函数的多种参数使用形式
+</h2><ul>
+<li>位置参数：形参与实参位置一一对应。</li>
+<li>关键字参数：函数调用时通过&quot;键=值&quot;形式传递参数。</li>
+</ul>
 <p><img src="https://s2.loli.net/2024/10/24/Aw6UVImjYc4DaTx.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt="image-20240922152943715.png"
+		alt="关键字参数"
 	
 	
 ></p>
-<p>​	缺省参数：定义函数时给形参设默认值，且有默认值的形参要放在所有形参			   的最后</p>
-<p>​	不定长：</p>
+<ul>
+<li>缺省参数：定义函数时给形参设默认值，且有默认值的形参要放在所有形参的最后。</li>
+<li>不定长参数：</li>
+</ul>
 <p><img src="https://s2.loli.net/2024/10/24/rthZnEw6MCg5Nbv.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt="image-20240921170827737.png"
+		alt="不定长参数1"
 	
 	
-></p>
-<p><img src="https://s2.loli.net/2024/10/24/lEG8iQkJeY6bNo4.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240921170853184.png"
-	
-	
-></p>
-<h6 id="11函数作为参数传递">11.函数作为参数传递
-</h6><p>​		<img src="https://s2.loli.net/2024/10/24/D8so7NbQGeX3HmS.png"
+><br>
+<img src="https://s2.loli.net/2024/10/24/lEG8iQkJeY6bNo4.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt="image-20240921173625451.png"
+		alt="不定长参数2"
 	
 	
 ></p>
-<h6 id="12lambda匿名函数">12.lambda匿名函数
-</h6><p>​	无名称的匿名函数只可以临时使用一次</p>
-<p>​	函数体只能写一行代码，无法写多行代码</p>
-<p><img src="https://s2.loli.net/2024/10/24/gewhSH2WCyi7tVJ.png"
+<h2 id="11-函数作为参数传递">11. 函数作为参数传递
+</h2><p><img src="https://s2.loli.net/2024/10/24/D8so7NbQGeX3HmS.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt="image-20240921174806641.png"
+		alt="函数作为参数"
 	
 	
 ></p>
-<h6 id="13文件的读取操作">13.文件的读取操作
-</h6><p>​	打开文件：</p>
-<p>​		<img src="https://s2.loli.net/2024/10/24/Aw6UVImjYc4DaTx.png"
+<h2 id="12-lambda匿名函数">12. lambda匿名函数
+</h2><ul>
+<li>无名称的匿名函数只可以临时使用一次。</li>
+<li>函数体只能写一行代码，无法写多行代码。</li>
+</ul>
+<img src="https://s2.loli.net/2024/10/24/gewhSH2WCyi7tVJ.png" alt="lambda匿名函数" style="zoom: 67%;" />  
+<h2 id="13-文件的读取操作">13. 文件的读取操作
+</h2><ul>
+<li>打开文件：</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/10/24/Aw6UVImjYc4DaTx.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt="image-20240922152943715.png"
+		alt="打开文件"
 	
 	
-></p>
-<p>​		<img src="https://s2.loli.net/2024/10/24/5zMNGLqeaxfhQCi.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240922153054980.png"
-	
-	
-></p>
-<p>​	读取文件：- read()</p>
-<p>​		<img src="https://s2.loli.net/2024/10/24/bLD9ovB6aIWypfm.png"
+><br>
+<img src="https://s2.loli.net/2024/10/24/5zMNGLqeaxfhQCi.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt="image-20240922153211306.png"
+		alt="文件模式"
 	
 	
 ></p>
-<p>​	读取文件：- readlines()</p>
+<ul>
+<li>读取文件：
+<ul>
+<li><code>read()</code>：读取整个文件内容。</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/10/24/bLD9ovB6aIWypfm.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="read方法"
+	
+	
+></p>
+<ul>
+<li><code>readlines()</code>：按行读取文件内容，返回一个列表。</li>
+</ul>
 <p><img src="https://s2.loli.net/2024/10/24/iY7C3oEPjO8GnaD.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt="image-20240922153310278.png"
+		alt="readlines方法"
 	
 	
 ></p>
-<p>​	读取文件：- readline()</p>
-<p>​		<img src="https://s2.loli.net/2024/10/24/z3GMvLHgl179jKA.png" alt="image-20240922153636734.png" style="zoom: 50%;" /></p>
-<p>​	使用for循环读取文件每一行</p>
-<p>​	关闭文件：    .close()</p>
-<p>​	with open 语法：读取等操作完成后自动关闭文件</p>
-<p>​		<img src="https://s2.loli.net/2024/10/24/YByzMUNfFtE5W1q.png" alt="image-20240922154351229.png" style="zoom: 50%;" /></p>
-<p>​	总结：</p>
-<p>​	<img src="https://s2.loli.net/2024/10/24/db5crNiqY47GxVZ.png" alt="image-20240922154510750.png" style="zoom:33%;" /></p>
-<h6 id="14文件的写出操作">14.文件的写出操作
-</h6><p>​	w 操作：文件不存在会创建文件，文件存在会清空文件内容，写入我们想写的</p>
-<p>​	write()写入内容，flush()刷新内容到硬盘中</p>
-<p>​	close()方法自带flush()的功能</p>
-<p>​	a 操作：文件不存在会创建文件，文件存在会再最后写入我们想写的</p>
-<h6 id="15异常捕获">15.异常捕获
-</h6><p>​	try:	可能出现异常的</p>
-<p>​	except:	出现异常时执行的</p>
-<p>​	else:	没出现异常时执行的</p>
-<p>​	finally:	有无异常时都执行的</p>
-<h6 id="16自定义模块并导入">16.自定义模块并导入
-</h6><p>​	_ _main__变量的功能是，只有当程序是直接执行的才会进入main下的代码，如果是	被导入的，则不执行</p>
-<p>​	不同模块的同名功能如果都被导入，后者将会覆盖前者</p>
-<p>​	_ _all__变量可以控制 import * 时哪些功能是可以被导入的</p>
-<h6 id="17json数据格式的转换">17.JSON数据格式的转换
-</h6><p>​	JSON就是一个字典或内部元素都是字典的列表</p>
-<p>​	data = json.dumps(data) 将python数据转化为	json数据，如果有中文可以带上：ensure_ascii = 	False 参数来确保中文正常转换</p>
-<p>​	josn.loads(data) 将json数据转化为python列表或	字典</p>
-
+<ul>
+<li><code>readline()</code>：逐行读取文件内容。</li>
+</ul>
+<img src="https://s2.loli.net/2024/10/24/z3GMvLHgl179jKA.png" alt="readline方法" style="zoom: 50%;" />  
+<ul>
+<li>使用for循环读取文件每一行。</li>
+<li>关闭文件：<code>.close()</code>。</li>
+<li><code>with open</code>语法：读取等操作完成后自动关闭文件。</li>
+</ul>
+<img src="https://s2.loli.net/2024/10/24/YByzMUNfFtE5W1q.png" alt="with open语法" style="zoom: 67%;" />  
+<ul>
+<li>总结：</li>
+</ul>
+<img src="https://s2.loli.net/2024/10/24/db5crNiqY47GxVZ.png" alt="文件读取总结" style="zoom:80%;" />  
+<h2 id="14-文件的写出操作">14. 文件的写出操作
+</h2><ul>
+<li><code>w</code>操作：文件不存在会创建文件，文件存在会清空文件内容，写入我们想写的内容。
+<ul>
+<li><code>write()</code>写入内容。</li>
+<li><code>flush()</code>刷新内容到硬盘中。</li>
+<li><code>close()</code>方法自带<code>flush()</code>的功能。</li>
+</ul>
+</li>
+<li><code>a</code>操作：文件不存在会创建文件，文件存在会在最后写入我们想写的内容。</li>
+</ul>
+<h2 id="15-异常捕获">15. 异常捕获
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">    <span class="c1"># 可能出现异常的代码块  </span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">    <span class="c1"># 出现异常时执行的代码块  </span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;捕获到异常: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">    <span class="c1"># 没出现异常时执行的代码块  </span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;代码执行成功，没有异常&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl"><span class="k">finally</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">    <span class="c1"># 无论是否出现异常，都会执行的代码块  </span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;执行结束，进行资源清理等操作&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="16-自定义模块并导入">16. 自定义模块并导入
+</h2><ul>
+<li><code>__main__</code>变量的功能：
+<ul>
+<li>只有当程序是直接执行的时候，才会进入<code>__main__</code>下的代码块。</li>
+<li>如果程序是被其他模块导入的，则不会执行<code>__main__</code>下的代码块。</li>
+</ul>
+</li>
+<li>模块导入的覆盖规则：
+<ul>
+<li>如果不同模块有同名函数，并且它们都被导入到同一个脚本中，那么后者将会覆盖前者。</li>
+</ul>
+</li>
+<li><code>__all__</code>变量的作用：
+<ul>
+<li>可以控制在使用<code>from module import *</code>时，哪些功能时可以被导入的。</li>
+</ul>
+</li>
+</ul>
+<h2 id="17-json数据格式的转换">17. JSON数据格式的转换
+</h2><ul>
+<li>JSON格式简介：
+<ul>
+<li>JSON（JavaScript Object Notation）是一种轻量级的数据交换格式。</li>
+<li>它可以是一个字典，也可以是一个内部元素都是字典的列表。</li>
+</ul>
+</li>
+<li>Python数据转换为JSON数据：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>  
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;value&#34;</span><span class="p">,</span> <span class="s2">&#34;number&#34;</span><span class="p">:</span> <span class="mi">123</span><span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># 如果有中文，可以带上 ensure_ascii=False 参数来确保中文正常转换  </span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>JSON数据转换为Python数据：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">json_data</span> <span class="o">=</span> <span class="s1">&#39;{&#34;key&#34;: &#34;value&#34;, &#34;number&#34;: 123}&#39;</span>  
+</span></span><span class="line"><span class="cl"><span class="n">python_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">python_data</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
