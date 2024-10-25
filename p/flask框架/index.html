@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="该文章讲述了python的一些入门基础">
-<title>Python入门基础</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="关于Flask框架的简要介绍">
+<title>Flask框架</title>
 
-<link rel='canonical' href='https://ice-bear259.github.io/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/'>
+<link rel='canonical' href='https://ice-bear259.github.io/p/flask%E6%A1%86%E6%9E%B6/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Python入门基础">
-<meta property='og:description' content="该文章讲述了python的一些入门基础">
-<meta property='og:url' content='https://ice-bear259.github.io/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/'>
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Flask框架">
+<meta property='og:description' content="关于Flask框架的简要介绍">
+<meta property='og:url' content='https://ice-bear259.github.io/p/flask%E6%A1%86%E6%9E%B6/'>
 <meta property='og:site_name' content='icebear'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-23T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-23T00:00:00&#43;00:00'/><meta property='og:image' content='https://ice-bear259.github.io/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/aespa.jpg' />
-<meta name="twitter:title" content="Python入门基础">
-<meta name="twitter:description" content="该文章讲述了python的一些入门基础"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://ice-bear259.github.io/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/aespa.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-25T00:00:00&#43;00:00'/><meta property='og:image' content='https://ice-bear259.github.io/p/flask%E6%A1%86%E6%9E%B6/bigbang.jpg' />
+<meta name="twitter:title" content="Flask框架">
+<meta name="twitter:description" content="关于Flask框架的简要介绍"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://ice-bear259.github.io/p/flask%E6%A1%86%E6%9E%B6/bigbang.jpg' />
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -282,23 +282,14 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#1-global关键字">1. global关键字</a></li>
-    <li><a href="#2-列表的下标索引">2. 列表的下标索引</a></li>
-    <li><a href="#3-列表的常用操作方法">3. 列表的常用操作方法</a></li>
-    <li><a href="#4-元组的定义和操作">4. 元组的定义和操作</a></li>
-    <li><a href="#5-字符串的定义和操作">5. 字符串的定义和操作</a></li>
-    <li><a href="#6-序列的切片">6. 序列的切片</a></li>
-    <li><a href="#7-集合的定义和操作">7. 集合的定义和操作</a></li>
-    <li><a href="#8-字典的定义和操作">8. 字典的定义和操作</a></li>
-    <li><a href="#9-五种数据容器特点对比">9. 五种数据容器特点对比</a></li>
-    <li><a href="#10-函数的多种参数使用形式">10. 函数的多种参数使用形式</a></li>
-    <li><a href="#11-函数作为参数传递">11. 函数作为参数传递</a></li>
-    <li><a href="#12-lambda匿名函数">12. lambda匿名函数</a></li>
-    <li><a href="#13-文件的读取操作">13. 文件的读取操作</a></li>
-    <li><a href="#14-文件的写出操作">14. 文件的写出操作</a></li>
-    <li><a href="#15-异常捕获">15. 异常捕获</a></li>
-    <li><a href="#16-自定义模块并导入">16. 自定义模块并导入</a></li>
-    <li><a href="#17-json数据格式的转换">17. JSON数据格式的转换</a></li>
+    <li>
+      <ol>
+        <li><a href="#一基本信息">一、基本信息</a></li>
+        <li><a href="#二主要特点">二、主要特点</a></li>
+        <li><a href="#三核心组件">三、核心组件</a></li>
+        <li><a href="#四基本用法">四、基本用法</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -313,13 +304,13 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/">
-                <img src="/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/aespa_hu13448124420186869598.jpg"
-                        srcset="/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/aespa_hu13448124420186869598.jpg 800w, /p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/aespa_hu10034941569119262279.jpg 1600w"
+            <a href="/p/flask%E6%A1%86%E6%9E%B6/">
+                <img src="/p/flask%E6%A1%86%E6%9E%B6/bigbang_hu8630348639161161876.jpg"
+                        srcset="/p/flask%E6%A1%86%E6%9E%B6/bigbang_hu8630348639161161876.jpg 800w, /p/flask%E6%A1%86%E6%9E%B6/bigbang_hu1081784249881831462.jpg 1600w"
                         width="800" 
-                        height="475" 
+                        height="533" 
                         loading="lazy"
-                        alt="Featured image of post Python入门基础" />
+                        alt="Featured image of post Flask框架" />
                 
             </a>
         </div>
@@ -333,17 +324,21 @@
                 Python
             </a>
         
+            <a href="/categories/flask%E6%A1%86%E6%9E%B6/" >
+                Flask框架
+            </a>
+        
     </header>
     
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/">Python入门基础</a>
+            <a href="/p/flask%E6%A1%86%E6%9E%B6/">Flask框架</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            该文章讲述了python的一些入门基础
+            关于Flask框架的简要介绍
         </h3>
         
     </div>
@@ -364,7 +359,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2024-10-23</time>
+                <time class="article-time--published">2024-10-25</time>
             </div>
         
 
@@ -380,318 +375,65 @@
     <section class="article-content">
     
     
-    <h1 id="python基础笔记">Python基础笔记
-</h1><h2 id="1-global关键字">1. global关键字
-</h2><p>使用<code>global</code>关键字可以在函数内部声明变量为全局变量。</p>
-<h2 id="2-列表的下标索引">2. 列表的下标索引
-</h2><ul>
-<li>正向索引：第一个元素从0开始。</li>
-<li>反向索引：最后一个元素下标为-1，向前依次-1。</li>
+    <p>Flask是一个使用Python编写的轻量级Web应用框架。</p>
+<h3 id="一基本信息">一、基本信息
+</h3><ul>
+<li><strong>中文名</strong>：Flask</li>
+<li><strong>外文名</strong>：Flask（也被称作“microframework”）</li>
+<li><strong>特点</strong>：使用简单的核心</li>
+<li><strong>授权</strong>：BSD授权</li>
+<li><strong>核心语言</strong>：Python</li>
+<li><strong>主要依赖</strong>：Werkzeug（路由、调试和Web服务器网关接口（WebServerGatewayInterface，WSGI）子系统）和Jinja2（模板系统）</li>
 </ul>
-<h2 id="3-列表的常用操作方法">3. 列表的常用操作方法
-</h2><ul>
-<li>查询下标：<code>列表.index(元素)</code>，若该元素不存在则会报错。</li>
-<li>插入元素：<code>列表.insert(下标, 元素)</code>。</li>
-<li>追加元素：<code>列表.append(元素)</code>，该元素追加到列表尾部。</li>
-<li>追加一批元素：<code>列表.extend(其他列表)</code>，将该列表追加到原本列表的尾部。</li>
-<li>删除元素：
-<ul>
-<li><code>del 列表[下标]</code></li>
-<li><code>列表.pop(下标)</code>，该方法能返回删除的元素。</li>
-</ul>
+<h3 id="二主要特点">二、主要特点
+</h3><ol>
+<li><strong>轻量级与灵活性</strong>：Flask是一个轻量级的可定制框架，使用Python语言编写，较其他同类型框架更为灵活、轻便、安全且容易上手。</li>
+<li><strong>可定制性</strong>：Flask有很强的定制性，用户可以根据自己的需求来添加相应的功能，在保持核心功能简单的同时实现功能的丰富与扩展。其强大的插件库可以让用户实现个性化的网站定制，开发出功能强大的网站。</li>
+<li><strong>易于上手</strong>：Flask的文档清晰简洁，易于学习和使用，同时它有一个庞大的社区，提供了丰富的资源和支持。</li>
+<li><strong>扩展性</strong>：Flask提供了丰富的扩展库（也称为扩展组件），开发者可以根据需求选择合适的扩展来扩展功能。这些功能都是以扩展组件的方式实现，然后再与Flask框架集成。</li>
+</ol>
+<h3 id="三核心组件">三、核心组件
+</h3><ol>
+<li><strong>Werkzeug</strong>：一个WSGI工具库，功能比较完善。它支持URL路由请求集成，可以响应多个用户的访问请求；支持Cookie和会话管理，建立长久连接关系，并提高用户访问速度；支持交互式Javascript调试，提高用户体验；还可以处理HTTP基本事务，快速响应客户端的访问请求。</li>
+<li><strong>Jinja2</strong>：一个模板引擎，用于渲染动态内容。它支持自动HTML转义功能，能够很好控制外部黑客的脚本攻击。系统运行速度很快，页面加载过程会将源码进行编译形成Python字节码，从而实现模板的高效运行。模板继承机制可以对模板内容进行修改和维护，为不同需求的用户提供相应的模板。</li>
+</ol>
+<h3 id="四基本用法">四、基本用法
+</h3><ol>
+<li>
+<p><strong>创建Flask应用</strong>：首先需要导入Flask类，并创建一个其实例，第一个参数是应用模块或者包的名称。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+</span></span><span class="line"><span class="cl"><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 主</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 要</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 代</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 码</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 内</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 容</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>定义路由</strong>：使用@app.route()装饰器来定义路由，将请求的URL映射到相应的视图函数，从而实现不同URL对应不同的处理逻辑。</p>
 </li>
-<li>删除某元素在列表中的第一项：<code>列表.remove(元素)</code>。</li>
-<li>清空列表：<code>列表.clear()</code>。</li>
-<li>统计某元素在列表中的数量：<code>列表.count(元素)</code>。</li>
-<li>统计列表内有多少个元素：<code>len(列表)</code>。</li>
-</ul>
-<h2 id="4-元组的定义和操作">4. 元组的定义和操作
-</h2><p>元组只读，不可修改（若在元组里嵌套了列表，列表是可以修改的）。</p>
-<ul>
-<li>用括号定义：如<code>t1 = (1, &quot;hello&quot;, True)</code>。</li>
-<li>定义单个元素的元组要加个逗号，否则是字符串类型或其他类型。</li>
-<li>元组下标索引与列表一致。</li>
-<li>查询下标：<code>元组.index(元素)</code>，若该元素不存在则会报错。</li>
-<li>统计某元素在元组中的数量：<code>元组.count(元素)</code>。</li>
-<li>统计元组内有多少个元素：<code>len(元组)</code>。</li>
-</ul>
-<h2 id="5-字符串的定义和操作">5. 字符串的定义和操作
-</h2><p><img src="https://s2.loli.net/2024/10/24/mbAMRouN5XUet7V.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="字符串定义和操作"
-	
-	
-><br>
-<img src="https://s2.loli.net/2024/10/24/ETYl1fFhGUiO82r.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="字符串方法"
-	
-	
-><br>
-<img src="https://s2.loli.net/2024/10/24/nGLKQ9oewFXhAsP.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="字符串格式化"
-	
-	
-><br>
-<img src="https://s2.loli.net/2024/10/24/G25dbxMThkreYJH.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="字符串其他操作"
-	
-	
-></p>
-<ul>
-<li>统计字符串的长度：<code>len(字符串)</code>。</li>
-</ul>
-<h2 id="6-序列的切片">6. 序列的切片
-</h2><p><img src="https://s2.loli.net/2024/10/24/lGpTZ1c3KqMEjOw.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="序列切片"
-	
-	
-></p>
-<h2 id="7-集合的定义和操作">7. 集合的定义和操作
-</h2><ul>
-<li>定义一个空集合：<code>集合 = set()</code>。</li>
-<li>不可重复，自动去重；无序，不支持下标索引。</li>
-<li>添加元素：<code>集合.add(元素)</code>。</li>
-<li>移除元素：<code>集合.remove(元素)</code>。</li>
-<li>随取出一个元素：<code>集合.pop()</code>，取出该元素后，集合将不再包含被取出的元素。</li>
-<li>清空集合：<code>集合.clear()</code>。</li>
-</ul>
-<p><img src="https://s2.loli.net/2024/10/24/bMnk4AuqV162wlg.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="集合操作"
-	
-	
-><br>
-<img src="https://s2.loli.net/2024/10/24/AKHRqZYy6aMB843.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="集合运算"
-	
-	
-><br>
-<img src="https://s2.loli.net/2024/10/24/afodyjKbuR6i8hH.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="集合其他操作"
-	
-	
-></p>
-<ul>
-<li>统计集合元素数量：<code>len(集合)</code>。</li>
-<li>集合不支持下标索引，不能用while循环，可以用for循环。</li>
-</ul>
-<h2 id="8-字典的定义和操作">8. 字典的定义和操作
-</h2><ul>
-<li>不能使用下标索引，使用key来取得对应的value。</li>
-</ul>
-<p><img src="https://s2.loli.net/2024/10/24/Y7bysj9Zru5T18L.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="字典定义"
-	
-	
-></p>
-<ul>
-<li>删除元素：<code>字典.pop(key)</code>，能返回删除的元素的值。</li>
-<li>清空元素：<code>字典.clear()</code>。</li>
-<li>获取全部的key：<code>字典.keys()</code>，就能通过获取的key遍历字典。</li>
-<li>统计字典元素个数：<code>len(字典)</code>。</li>
-</ul>
-<h2 id="9-五种数据容器特点对比">9. 五种数据容器特点对比
-</h2><p><img src="https://s2.loli.net/2024/10/24/2ikAxEnFzpMdthZ.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="数据容器特点对比"
-	
-	
-></p>
-<ul>
-<li>类型转换：
-<ul>
-<li>容器转列表：<code>list(容器)</code></li>
-<li>容器转元组：<code>tuple(容器)</code></li>
-<li>容器转字符串：<code>str(容器)</code></li>
-<li>容器转集合：<code>set(容器)</code></li>
-</ul>
-</li>
-<li>容器通用排序功能：<code>sorted(容器, reverse=True)</code>（<code>reverse</code>默认为<code>False</code>可以不写）。</li>
-</ul>
-<h2 id="10-函数的多种参数使用形式">10. 函数的多种参数使用形式
-</h2><ul>
-<li>位置参数：形参与实参位置一一对应。</li>
-<li>关键字参数：函数调用时通过&quot;键=值&quot;形式传递参数。</li>
-</ul>
-<p><img src="https://s2.loli.net/2024/10/24/Aw6UVImjYc4DaTx.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="关键字参数"
-	
-	
-></p>
-<ul>
-<li>缺省参数：定义函数时给形参设默认值，且有默认值的形参要放在所有形参的最后。</li>
-<li>不定长参数：</li>
-</ul>
-<p><img src="https://s2.loli.net/2024/10/24/rthZnEw6MCg5Nbv.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="不定长参数1"
-	
-	
-><br>
-<img src="https://s2.loli.net/2024/10/24/lEG8iQkJeY6bNo4.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="不定长参数2"
-	
-	
-></p>
-<h2 id="11-函数作为参数传递">11. 函数作为参数传递
-</h2><p><img src="https://s2.loli.net/2024/10/24/D8so7NbQGeX3HmS.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="函数作为参数"
-	
-	
-></p>
-<h2 id="12-lambda匿名函数">12. lambda匿名函数
-</h2><ul>
-<li>无名称的匿名函数只可以临时使用一次。</li>
-<li>函数体只能写一行代码，无法写多行代码。</li>
-</ul>
-<img src="https://s2.loli.net/2024/10/24/gewhSH2WCyi7tVJ.png" alt="lambda匿名函数" style="zoom: 67%;" />  
-<h2 id="13-文件的读取操作">13. 文件的读取操作
-</h2><ul>
-<li>打开文件：</li>
-</ul>
-<p><img src="https://s2.loli.net/2024/10/24/Aw6UVImjYc4DaTx.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="打开文件"
-	
-	
-><br>
-<img src="https://s2.loli.net/2024/10/24/5zMNGLqeaxfhQCi.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="文件模式"
-	
-	
-></p>
-<ul>
-<li>读取文件：
-<ul>
-<li><code>read()</code>：读取整个文件内容。</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://s2.loli.net/2024/10/24/bLD9ovB6aIWypfm.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="read方法"
-	
-	
-></p>
-<ul>
-<li><code>readlines()</code>：按行读取文件内容，返回一个列表。</li>
-</ul>
-<p><img src="https://s2.loli.net/2024/10/24/iY7C3oEPjO8GnaD.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="readlines方法"
-	
-	
-></p>
-<ul>
-<li><code>readline()</code>：逐行读取文件内容。</li>
-</ul>
-<img src="https://s2.loli.net/2024/10/24/z3GMvLHgl179jKA.png" alt="readline方法" style="zoom: 50%;" />  
-<ul>
-<li>使用for循环读取文件每一行。</li>
-<li>关闭文件：<code>.close()</code>。</li>
-<li><code>with open</code>语法：读取等操作完成后自动关闭文件。</li>
-</ul>
-<img src="https://s2.loli.net/2024/10/24/YByzMUNfFtE5W1q.png" alt="with open语法" style="zoom: 67%;" />  
-<ul>
-<li>总结：</li>
-</ul>
-<img src="https://s2.loli.net/2024/10/24/db5crNiqY47GxVZ.png" alt="文件读取总结" style="zoom:80%;" />  
-<h2 id="14-文件的写出操作">14. 文件的写出操作
-</h2><ul>
-<li><code>w</code>操作：文件不存在会创建文件，文件存在会清空文件内容，写入我们想写的内容。
-<ul>
-<li><code>write()</code>写入内容。</li>
-<li><code>flush()</code>刷新内容到硬盘中。</li>
-<li><code>close()</code>方法自带<code>flush()</code>的功能。</li>
-</ul>
-</li>
-<li><code>a</code>操作：文件不存在会创建文件，文件存在会在最后写入我们想写的内容。</li>
-</ul>
-<h2 id="15-异常捕获">15. 异常捕获
-</h2><div class="highlight"><div class="chroma">
+<li>
+<p><strong>编写视图函数</strong>：视图函数是与路由相关联的函数，用于处理URL请求并返回响应。</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -704,80 +446,100 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>  
-</span></span><span class="line"><span class="cl">    <span class="c1"># 可能出现异常的代码块  </span>
-</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  
-</span></span><span class="line"><span class="cl">    <span class="c1"># 出现异常时执行的代码块  </span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;捕获到异常: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>  
-</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>  
-</span></span><span class="line"><span class="cl">    <span class="c1"># 没出现异常时执行的代码块  </span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;代码执行成功，没有异常&#34;</span><span class="p">)</span>  
-</span></span><span class="line"><span class="cl"><span class="k">finally</span><span class="p">:</span>  
-</span></span><span class="line"><span class="cl">    <span class="c1"># 无论是否出现异常，都会执行的代码块  </span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;执行结束，进行资源清理等操作&#34;</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 通过访问路径，获取用户的字符串参数</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/index/&lt;name&gt;&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="s2">&#34;hi</span><span class="si">%s</span><span class="s2">&#34;</span><span class="o">%</span><span class="n">name</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 通过访问路径，获取用户的整型参数(还有float类型)</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/index/&lt;int:id&gt;&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">hello1</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="s2">&#34;hi,</span><span class="si">%d</span><span class="s2">号会员你好&#34;</span><span class="o">%</span><span class="nb">id</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="16-自定义模块并导入">16. 自定义模块并导入
-</h2><ul>
-<li><code>__main__</code>变量的功能：
-<ul>
-<li>只有当程序是直接执行的时候，才会进入<code>__main__</code>下的代码块。</li>
-<li>如果程序是被其他模块导入的，则不会执行<code>__main__</code>下的代码块。</li>
-</ul>
-</li>
-<li>模块导入的覆盖规则：
-<ul>
-<li>如果不同模块有同名函数，并且它们都被导入到同一个脚本中，那么后者将会覆盖前者。</li>
-</ul>
-</li>
-<li><code>__all__</code>变量的作用：
-<ul>
-<li>可以控制在使用<code>from module import *</code>时，哪些功能时可以被导入的。</li>
-</ul>
-</li>
-</ul>
-<h2 id="17-json数据格式的转换">17. JSON数据格式的转换
-</h2><ul>
-<li>JSON格式简介：
-<ul>
-<li>JSON（JavaScript Object Notation）是一种轻量级的数据交换格式。</li>
-<li>它可以是一个字典，也可以是一个内部元素都是字典的列表。</li>
-</ul>
-</li>
-<li>Python数据转换为JSON数据：</li>
-</ul>
+</div></li>
+<li>
+<p><strong>使用模板引擎</strong>：Flask框架集成了Jinja2作为其默认的模板引擎，用于渲染动态内容。可以使用render_template()函数将动态数据传递给模板，并生成最终的HTML响应。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">render_template</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">datetime</span>		<span class="c1"># 导入时间包</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 返回给用户渲染后的网页文件</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">index1</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 向页面传递一个变量</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">index2</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">	<span class="n">time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>	<span class="c1"># 普通变量</span>
+</span></span><span class="line"><span class="cl">	<span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;小张&#39;</span><span class="p">,</span> <span class="s1">&#39;小王&#39;</span><span class="p">,</span> <span class="s1">&#39;小陈&#39;</span><span class="p">]</span>   <span class="c1"># 列表变量</span>
+</span></span><span class="line"><span class="cl">    <span class="n">task</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;任务&#39;</span><span class="p">:</span> <span class="s1">&#39;打扫卫生&#39;</span><span class="p">,</span> <span class="s1">&#39;时间&#39;</span><span class="p">:</span> <span class="s1">&#39;3小时&#39;</span><span class="p">}</span>  <span class="c1"># 字典变量</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="n">var</span><span class="o">=</span><span class="n">time</span><span class="p">,</span> <span class="nb">list</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">task</span><span class="o">=</span><span class="n">task</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 表单提交</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/test/register&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">register</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;test/register.html&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>处理请求</strong>：Flask框架还支持通过request对象来获取请求参数、请求头、请求方法等信息，从而实现更复杂的请求处理。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>  
-</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;value&#34;</span><span class="p">,</span> <span class="s2">&#34;number&#34;</span><span class="p">:</span> <span class="mi">123</span><span class="p">}</span>  
-</span></span><span class="line"><span class="cl"><span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># 如果有中文，可以带上 ensure_ascii=False 参数来确保中文正常转换  </span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">request</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 接收表单提交的路由，需要指定methods为POST，否则默认为GET</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/result&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;POST&#34;</span><span class="p">,</span> <span class="s2">&#34;GET&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">result</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&#34;POST&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;test/result.html&#39;</span><span class="p">,</span> <span class="n">result</span><span class="o">=</span><span class="n">result</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>JSON数据转换为Python数据：</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">json_data</span> <span class="o">=</span> <span class="s1">&#39;{&#34;key&#34;: &#34;value&#34;, &#34;number&#34;: 123}&#39;</span>  
-</span></span><span class="line"><span class="cl"><span class="n">python_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span>  
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">python_data</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div>
+</div></li>
+</ol>
+
 </section>
 
 
@@ -801,23 +563,23 @@
             
                 
 <article class="has-image">
-    <a href="/p/flask%E6%A1%86%E6%9E%B6/">
+    <a href="/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/">
         
         
             <div class="article-image">
-                <img src="/p/flask%E6%A1%86%E6%9E%B6/bigbang.6f4dbcf1ab8fc3880735e1cba60bfea1_hu3978495615795138317.jpg" 
+                <img src="/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/aespa.bbb4749e749d68a5f3a7254a93ce2b4c_hu17946378675451586428.jpg" 
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post Flask框架"
+                        alt="Featured image of post Python入门基础"
                         
-                        data-hash="md5-b0288auPw4gHNeHLpgv&#43;oQ==">
+                        data-hash="md5-u7R0nnSdaKXzpyVKk84rTA==">
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">Flask框架</h2>
+            <h2 class="article-title">Python入门基础</h2>
         </div>
     </a>
 </article>
