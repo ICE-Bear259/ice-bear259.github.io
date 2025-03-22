@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="该文章讲述了python的一些入门基础">
+<title>Python入门基础</title>
+
+<link rel='canonical' href='https://ice-bear259.github.io/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Python入门基础">
+<meta property='og:description' content="该文章讲述了python的一些入门基础">
+<meta property='og:url' content='https://ice-bear259.github.io/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/'>
+<meta property='og:site_name' content='ICE-Bear'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-23T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-23T00:00:00&#43;00:00'/><meta property='og:image' content='https://ice-bear259.github.io/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/aespa.jpg' />
+<meta name="twitter:title" content="Python入门基础">
+<meta name="twitter:description" content="该文章讲述了python的一些入门基础"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://ice-bear259.github.io/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/aespa.jpg' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_871e8220024e9bf8.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🦈</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">ICE-Bear</a></h1>
+            <h2 class="site-description">多少沾点的程序员</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bilibili"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z" /><path d="M8 3l2 3" /><path d="M16 3l-2 3" /><path d="M9 13v-2" /><path d="M15 11v2" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/ICE-Bear259'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友情链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#1-global关键字">1. global关键字</a></li>
+    <li><a href="#2-列表的下标索引">2. 列表的下标索引</a></li>
+    <li><a href="#3-列表的常用操作方法">3. 列表的常用操作方法</a></li>
+    <li><a href="#4-元组的定义和操作">4. 元组的定义和操作</a></li>
+    <li><a href="#5-字符串的定义和操作">5. 字符串的定义和操作</a></li>
+    <li><a href="#6-序列的切片">6. 序列的切片</a></li>
+    <li><a href="#7-集合的定义和操作">7. 集合的定义和操作</a></li>
+    <li><a href="#8-字典的定义和操作">8. 字典的定义和操作</a></li>
+    <li><a href="#9-五种数据容器特点对比">9. 五种数据容器特点对比</a></li>
+    <li><a href="#10-函数的多种参数使用形式">10. 函数的多种参数使用形式</a></li>
+    <li><a href="#11-函数作为参数传递">11. 函数作为参数传递</a></li>
+    <li><a href="#12-lambda匿名函数">12. lambda匿名函数</a></li>
+    <li><a href="#13-文件的读取操作">13. 文件的读取操作</a></li>
+    <li><a href="#14-文件的写出操作">14. 文件的写出操作</a></li>
+    <li><a href="#15-异常捕获">15. 异常捕获</a></li>
+    <li><a href="#16-自定义模块并导入">16. 自定义模块并导入</a></li>
+    <li><a href="#17-json数据格式的转换">17. JSON数据格式的转换</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/">
+                <img src="/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/aespa_hu_673a98404e7b8611.jpg"
+                        srcset="/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/aespa_hu_673a98404e7b8611.jpg 800w, /p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/aespa_hu_bec35829560c789d.jpg 1600w"
+                        width="800" 
+                        height="475" 
+                        loading="lazy"
+                        alt="Featured image of post Python入门基础" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/python/" >
+                Python
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/">Python入门基础</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            该文章讲述了python的一些入门基础
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-10-10</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="python基础笔记">Python基础笔记
+</h1><h2 id="1-global关键字">1. global关键字
+</h2><p>使用<code>global</code>关键字可以在函数内部声明变量为全局变量。</p>
+<h2 id="2-列表的下标索引">2. 列表的下标索引
+</h2><ul>
+<li>正向索引：第一个元素从0开始。</li>
+<li>反向索引：最后一个元素下标为-1，向前依次-1。</li>
+</ul>
+<h2 id="3-列表的常用操作方法">3. 列表的常用操作方法
+</h2><ul>
+<li>查询下标：<code>列表.index(元素)</code>，若该元素不存在则会报错。</li>
+<li>插入元素：<code>列表.insert(下标, 元素)</code>。</li>
+<li>追加元素：<code>列表.append(元素)</code>，该元素追加到列表尾部。</li>
+<li>追加一批元素：<code>列表.extend(其他列表)</code>，将该列表追加到原本列表的尾部。</li>
+<li>删除元素：
+<ul>
+<li><code>del 列表[下标]</code></li>
+<li><code>列表.pop(下标)</code>，该方法能返回删除的元素。</li>
+</ul>
+</li>
+<li>删除某元素在列表中的第一项：<code>列表.remove(元素)</code>。</li>
+<li>清空列表：<code>列表.clear()</code>。</li>
+<li>统计某元素在列表中的数量：<code>列表.count(元素)</code>。</li>
+<li>统计列表内有多少个元素：<code>len(列表)</code>。</li>
+</ul>
+<h2 id="4-元组的定义和操作">4. 元组的定义和操作
+</h2><p>元组只读，不可修改（若在元组里嵌套了列表，列表是可以修改的）。</p>
+<ul>
+<li>用括号定义：如<code>t1 = (1, &quot;hello&quot;, True)</code>。</li>
+<li>定义单个元素的元组要加个逗号，否则是字符串类型或其他类型。</li>
+<li>元组下标索引与列表一致。</li>
+<li>查询下标：<code>元组.index(元素)</code>，若该元素不存在则会报错。</li>
+<li>统计某元素在元组中的数量：<code>元组.count(元素)</code>。</li>
+<li>统计元组内有多少个元素：<code>len(元组)</code>。</li>
+</ul>
+<h2 id="5-字符串的定义和操作">5. 字符串的定义和操作
+</h2><p><img src="https://s2.loli.net/2024/10/24/mbAMRouN5XUet7V.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="字符串定义和操作"
+	
+	
+><br>
+<img src="https://s2.loli.net/2024/10/24/ETYl1fFhGUiO82r.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="字符串方法"
+	
+	
+><br>
+<img src="https://s2.loli.net/2024/10/24/nGLKQ9oewFXhAsP.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="字符串格式化"
+	
+	
+><br>
+<img src="https://s2.loli.net/2024/10/24/G25dbxMThkreYJH.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="字符串其他操作"
+	
+	
+></p>
+<ul>
+<li>统计字符串的长度：<code>len(字符串)</code>。</li>
+</ul>
+<h2 id="6-序列的切片">6. 序列的切片
+</h2><p><img src="https://s2.loli.net/2024/10/24/lGpTZ1c3KqMEjOw.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="序列切片"
+	
+	
+></p>
+<h2 id="7-集合的定义和操作">7. 集合的定义和操作
+</h2><ul>
+<li>定义一个空集合：<code>集合 = set()</code>。</li>
+<li>不可重复，自动去重；无序，不支持下标索引。</li>
+<li>添加元素：<code>集合.add(元素)</code>。</li>
+<li>移除元素：<code>集合.remove(元素)</code>。</li>
+<li>随取出一个元素：<code>集合.pop()</code>，取出该元素后，集合将不再包含被取出的元素。</li>
+<li>清空集合：<code>集合.clear()</code>。</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/10/24/bMnk4AuqV162wlg.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="集合操作"
+	
+	
+><br>
+<img src="https://s2.loli.net/2024/10/24/AKHRqZYy6aMB843.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="集合运算"
+	
+	
+><br>
+<img src="https://s2.loli.net/2024/10/24/afodyjKbuR6i8hH.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="集合其他操作"
+	
+	
+></p>
+<ul>
+<li>统计集合元素数量：<code>len(集合)</code>。</li>
+<li>集合不支持下标索引，不能用while循环，可以用for循环。</li>
+</ul>
+<h2 id="8-字典的定义和操作">8. 字典的定义和操作
+</h2><ul>
+<li>不能使用下标索引，使用key来取得对应的value。</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/10/24/Y7bysj9Zru5T18L.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="字典定义"
+	
+	
+></p>
+<ul>
+<li>删除元素：<code>字典.pop(key)</code>，能返回删除的元素的值。</li>
+<li>清空元素：<code>字典.clear()</code>。</li>
+<li>获取全部的key：<code>字典.keys()</code>，就能通过获取的key遍历字典。</li>
+<li>统计字典元素个数：<code>len(字典)</code>。</li>
+</ul>
+<h2 id="9-五种数据容器特点对比">9. 五种数据容器特点对比
+</h2><p><img src="https://s2.loli.net/2024/10/24/2ikAxEnFzpMdthZ.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="数据容器特点对比"
+	
+	
+></p>
+<ul>
+<li>类型转换：
+<ul>
+<li>容器转列表：<code>list(容器)</code></li>
+<li>容器转元组：<code>tuple(容器)</code></li>
+<li>容器转字符串：<code>str(容器)</code></li>
+<li>容器转集合：<code>set(容器)</code></li>
+</ul>
+</li>
+<li>容器通用排序功能：<code>sorted(容器, reverse=True)</code>（<code>reverse</code>默认为<code>False</code>可以不写）。</li>
+</ul>
+<h2 id="10-函数的多种参数使用形式">10. 函数的多种参数使用形式
+</h2><ul>
+<li>位置参数：形参与实参位置一一对应。</li>
+<li>关键字参数：函数调用时通过&quot;键=值&quot;形式传递参数。</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/10/24/Aw6UVImjYc4DaTx.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="关键字参数"
+	
+	
+></p>
+<ul>
+<li>缺省参数：定义函数时给形参设默认值，且有默认值的形参要放在所有形参的最后。</li>
+<li>不定长参数：</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/10/24/rthZnEw6MCg5Nbv.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="不定长参数1"
+	
+	
+><br>
+<img src="https://s2.loli.net/2024/10/24/lEG8iQkJeY6bNo4.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="不定长参数2"
+	
+	
+></p>
+<h2 id="11-函数作为参数传递">11. 函数作为参数传递
+</h2><p><img src="https://s2.loli.net/2024/10/24/D8so7NbQGeX3HmS.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="函数作为参数"
+	
+	
+></p>
+<h2 id="12-lambda匿名函数">12. lambda匿名函数
+</h2><ul>
+<li>无名称的匿名函数只可以临时使用一次。</li>
+<li>函数体只能写一行代码，无法写多行代码。</li>
+</ul>
+<img src="https://s2.loli.net/2024/10/24/gewhSH2WCyi7tVJ.png" alt="lambda匿名函数" style="zoom: 67%;" />  
+<h2 id="13-文件的读取操作">13. 文件的读取操作
+</h2><ul>
+<li>打开文件：</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/10/24/Aw6UVImjYc4DaTx.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="打开文件"
+	
+	
+><br>
+<img src="https://s2.loli.net/2024/10/24/5zMNGLqeaxfhQCi.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="文件模式"
+	
+	
+></p>
+<ul>
+<li>读取文件：
+<ul>
+<li><code>read()</code>：读取整个文件内容。</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/10/24/bLD9ovB6aIWypfm.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="read方法"
+	
+	
+></p>
+<ul>
+<li><code>readlines()</code>：按行读取文件内容，返回一个列表。</li>
+</ul>
+<p><img src="https://s2.loli.net/2024/10/24/iY7C3oEPjO8GnaD.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="readlines方法"
+	
+	
+></p>
+<ul>
+<li><code>readline()</code>：逐行读取文件内容。</li>
+</ul>
+<img src="https://s2.loli.net/2024/10/24/z3GMvLHgl179jKA.png" alt="readline方法" style="zoom: 50%;" />  
+<ul>
+<li>使用for循环读取文件每一行。</li>
+<li>关闭文件：<code>.close()</code>。</li>
+<li><code>with open</code>语法：读取等操作完成后自动关闭文件。</li>
+</ul>
+<img src="https://s2.loli.net/2024/10/24/YByzMUNfFtE5W1q.png" alt="with open语法" style="zoom: 67%;" />  
+<ul>
+<li>总结：</li>
+</ul>
+<img src="https://s2.loli.net/2024/10/24/db5crNiqY47GxVZ.png" alt="文件读取总结" style="zoom:80%;" />  
+<h2 id="14-文件的写出操作">14. 文件的写出操作
+</h2><ul>
+<li><code>w</code>操作：文件不存在会创建文件，文件存在会清空文件内容，写入我们想写的内容。
+<ul>
+<li><code>write()</code>写入内容。</li>
+<li><code>flush()</code>刷新内容到硬盘中。</li>
+<li><code>close()</code>方法自带<code>flush()</code>的功能。</li>
+</ul>
+</li>
+<li><code>a</code>操作：文件不存在会创建文件，文件存在会在最后写入我们想写的内容。</li>
+</ul>
+<h2 id="15-异常捕获">15. 异常捕获
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">    <span class="c1"># 可能出现异常的代码块  </span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">    <span class="c1"># 出现异常时执行的代码块  </span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;捕获到异常: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">    <span class="c1"># 没出现异常时执行的代码块  </span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;代码执行成功，没有异常&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl"><span class="k">finally</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">    <span class="c1"># 无论是否出现异常，都会执行的代码块  </span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;执行结束，进行资源清理等操作&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="16-自定义模块并导入">16. 自定义模块并导入
+</h2><ul>
+<li><code>__main__</code>变量的功能：
+<ul>
+<li>只有当程序是直接执行的时候，才会进入<code>__main__</code>下的代码块。</li>
+<li>如果程序是被其他模块导入的，则不会执行<code>__main__</code>下的代码块。</li>
+</ul>
+</li>
+<li>模块导入的覆盖规则：
+<ul>
+<li>如果不同模块有同名函数，并且它们都被导入到同一个脚本中，那么后者将会覆盖前者。</li>
+</ul>
+</li>
+<li><code>__all__</code>变量的作用：
+<ul>
+<li>可以控制在使用<code>from module import *</code>时，哪些功能时可以被导入的。</li>
+</ul>
+</li>
+</ul>
+<h2 id="17-json数据格式的转换">17. JSON数据格式的转换
+</h2><ul>
+<li>JSON格式简介：
+<ul>
+<li>JSON（JavaScript Object Notation）是一种轻量级的数据交换格式。</li>
+<li>它可以是一个字典，也可以是一个内部元素都是字典的列表。</li>
+</ul>
+</li>
+<li>Python数据转换为JSON数据：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>  
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;value&#34;</span><span class="p">,</span> <span class="s2">&#34;number&#34;</span><span class="p">:</span> <span class="mi">123</span><span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># 如果有中文，可以带上 ensure_ascii=False 参数来确保中文正常转换  </span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>JSON数据转换为Python数据：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">json_data</span> <span class="o">=</span> <span class="s1">&#39;{&#34;key&#34;: &#34;value&#34;, &#34;number&#34;: 123}&#39;</span>  
+</span></span><span class="line"><span class="cl"><span class="n">python_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">python_data</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/flask%E6%A1%86%E6%9E%B6/">
+        
+        
+            <div class="article-image">
+                <img src="/p/flask%E6%A1%86%E6%9E%B6/bigbang.6f4dbcf1ab8fc3880735e1cba60bfea1_hu_5780c236102a1a85.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Flask框架"
+                        
+                        data-hash="md5-b0288auPw4gHNeHLpgv&#43;oQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Flask框架</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 ICE-Bear
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
