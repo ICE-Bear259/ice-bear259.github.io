@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Nuxt3 1.创建Nuxt3项目 cmd输入\n1 npx nuxi@latest init project-name 2.案例练习 nuxt有一些约定的目录，有特殊功能，如pages目录的vue文件会自动注册路由。\nNuxt.js自带基于文件的路由系统，无需安装vue-router，无需额外配置。\n">
+<title>Nuxt3入门学习小记</title>
+
+<link rel='canonical' href='https://ice-bear259.github.io/p/nuxt3%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Nuxt3入门学习小记">
+<meta property='og:description' content="Nuxt3 1.创建Nuxt3项目 cmd输入\n1 npx nuxi@latest init project-name 2.案例练习 nuxt有一些约定的目录，有特殊功能，如pages目录的vue文件会自动注册路由。\nNuxt.js自带基于文件的路由系统，无需安装vue-router，无需额外配置。\n">
+<meta property='og:url' content='https://ice-bear259.github.io/p/nuxt3%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/'>
+<meta property='og:site_name' content='ICE-Bear'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-03-22T23:30:02&#43;08:00'/><meta property='article:modified_time' content='2025-03-22T23:30:02&#43;08:00'/>
+<meta name="twitter:title" content="Nuxt3入门学习小记">
+<meta name="twitter:description" content="Nuxt3 1.创建Nuxt3项目 cmd输入\n1 npx nuxi@latest init project-name 2.案例练习 nuxt有一些约定的目录，有特殊功能，如pages目录的vue文件会自动注册路由。\nNuxt.js自带基于文件的路由系统，无需安装vue-router，无需额外配置。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_871e8220024e9bf8.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🦈</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">ICE-Bear</a></h1>
+            <h2 class="site-description">多少沾点的程序员</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bilibili"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z" /><path d="M8 3l2 3" /><path d="M16 3l-2 3" /><path d="M9 13v-2" /><path d="M15 11v2" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/ICE-Bear259'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友情链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li>
+          <ol>
+            <li></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/nuxt3%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/">Nuxt3入门学习小记</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2025-03-03</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="nuxt3">Nuxt3
+</h1><h6 id="1创建nuxt3项目">1.创建Nuxt3项目
+</h6><p>cmd输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npx nuxi@latest init project-name
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h6 id="2案例练习">2.案例练习
+</h6><p>nuxt有一些约定的目录，有特殊功能，如pages目录的vue文件会自动注册路由。</p>
+<p>Nuxt.js自带基于文件的路由系统，无需安装vue-router，无需额外配置。</p>
+<p><strong>参考目录</strong></p>
+<p><img src="C:%5cUsers%5c86156%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20250106213255669.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250106213255669"
+	
+	
+></p>
+<p><strong>参考代码</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-vue" data-lang="vue"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="c">&lt;!--</span> <span class="nx">Nuxt</span> <span class="nx">基于文件的路由系统</span> <span class="o">--&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">&lt;!--</span> <span class="nx">首页</span> <span class="nx">index</span><span class="o">/</span><span class="nx">index</span><span class="p">.</span><span class="nx">vue</span> <span class="o">--&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">NuxtLink</span> <span class="na">to</span><span class="o">=</span><span class="s">&#34;/&#34;</span><span class="p">&gt;</span><span class="nx">首页</span><span class="p">&lt;/</span><span class="nt">NuxtLink</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="c">&lt;!--</span> <span class="nx">视频页</span> <span class="nx">video</span><span class="o">/</span><span class="nx">index</span><span class="p">.</span><span class="nx">vue</span> <span class="o">--&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">NuxtLink</span> <span class="na">to</span><span class="o">=</span><span class="s">&#34;/video&#34;</span><span class="p">&gt;</span><span class="nx">视频页</span><span class="p">&lt;/</span><span class="nt">NuxtLink</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="c">&lt;!--</span> <span class="nx">Nuxt页面路由</span><span class="err">，</span><span class="nx">相当于RouterView</span> <span class="o">--&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">NuxtPage</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><NuxtLink>相当于<RouterLink></li>
+<li><NuxtPage>相当于<RouterView></li>
+</ul>
+<h6 id="3seo优化">3.SEO优化
+</h6><p>通过设置网页title和description等SEO优化信息，由服务器渲染，可提高网页在搜索引擎结果页面中的排名和可见性。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-vue" data-lang="vue"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//SEO优化信息
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">useSeoMeta</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">//网站标题
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">title</span><span class="o">:</span><span class="s2">&#34;哔哩哔哩 (゜-゜)つロ 干杯~-bilibili官方&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">//网站描述
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">description</span><span class="o">:</span><span class="s2">&#34;哔哩哔哩（bilibili.com)是国内知名的视频弹幕网站，这里有及时的动漫新番，活跃的ACG氛围，有创意的Up主。大家可以在这里找到许多欢乐。&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">//搜索关键词
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">keywords</span><span class="o">:</span><span class="s1">&#39;B站,bilibili,哔哩哔哩,哔哩哔哩动画,动漫,电影,在线动漫,高清电影&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h6 id="4vantnuxt组件库">4.@vant/nuxt组件库
+</h6><p>安装nuxt版vant-ui</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npm i @vant/nuxt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>添加配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">defineNuxtConfig</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 开启调试工具
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">devtools</span><span class="o">:</span> <span class="p">{</span> <span class="nx">enabled</span>: <span class="kt">true</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 应用模块
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">modules</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;@vant/nuxt&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-vue" data-lang="vue"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">van-button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;primary&#34;</span><span class="p">&gt;</span><span class="nx">主要按钮</span><span class="p">&lt;/</span><span class="nt">van-button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">van-button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;success&#34;</span><span class="p">&gt;</span><span class="nx">成功按钮</span><span class="p">&lt;/</span><span class="nt">van-button</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>PS：在 Nuxt 项目中，vant 组件会自动按需导入（需重启服务）。</p>
+<p>修改主题色：在app.vue的样式全局生效</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-vue" data-lang="vue"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;scss&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">:</span><span class="nx">root</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="cm">/* CSS 变量设置组件库主题 */</span>
+</span></span><span class="line"><span class="cl">  <span class="o">--</span><span class="nx">van</span><span class="o">-</span><span class="nx">primary</span><span class="o">-</span><span class="nx">color</span><span class="o">:</span> <span class="err">#</span><span class="nx">fb7299</span> <span class="o">!</span><span class="nx">important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h6 id="5接口服务器">5.接口服务器
+</h6><p>Nuxt支持在<strong>server</strong>目录写服务器接口，用于数据请求。</p>
+<p>为了让大家更好地了解nuxt接口服务器，我们仅提供了静态数据，但这个服务器目录可以用于对接数据库等更复杂的操作。
+这样，您可以通过编写自定义的服务器接口来满足项目的需求。</p>
+<ul>
+<li>静态数据</li>
+</ul>
+<p>​	放在database，目录下</p>
+<ul>
+<li>
+<p>频道接口</p>
+<p>Nuxt基于文件生成接口，在  <strong>server</strong> 目录下的<code>/api/channel.get.ts</code>，会自动生成接口<code>/api/channel</code>，请求方式为<code>get</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">channel</span> <span class="kr">from</span> <span class="s1">&#39;@/database/channel&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 通过 defineEventHandler 定义接口
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="nx">defineEventHandler</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">channel</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可通过 http://localhost:300/api/channel 访问以上频道接口，文件名的后缀可以是<code>.get</code>，<code>.post</code>，<code>.put</code>，<code>.delete</code>等，以匹配请求的HTTP方式。</p>
+</li>
+</ul>
+<h6 id="6类型处理">6.类型处理
+</h6><p>指定正确的 TypeScript 类型可以让项目更安全，在 VS Code 中可通过 <code>json2ts</code> 插件，快速基于 JSON 生成 TS 类型声明文件。</p>
+<p>类型声明文件：<code>types/video.d.ts</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Author</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">mid</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">name</span>: <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">face</span>: <span class="kt">string</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Stat</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">aid</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">view</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">danmaku</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">reply</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">favorite</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">coin</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">share</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">now_rank</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">his_rank</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">like</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">dislike</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">vt</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">vv</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">VideoItem</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">aid</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">type_id</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">tname</span>: <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">pic</span>: <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">title</span>: <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">pubdate</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">ctime</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">tags</span>: <span class="kt">any</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">duration</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">author</span>: <span class="kt">Author</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">stat</span>: <span class="kt">Stat</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">hot_desc</span>: <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">corner_mark</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">bvid</span>: <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">enable_vt</span>: <span class="kt">number</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>类型升级</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="line"><span class="cl">// 导入类型
+</span></span><span class="line"><span class="cl"><span class="gi">+  import type { VideoItem } from &#39;@/types/video&#39;
+</span></span></span><span class="line"><span class="cl"><span class="gi"></span>
+</span></span><span class="line"><span class="cl">// 显示的列表 - 指定类型
+</span></span><span class="line"><span class="cl"><span class="gd">-  const list = ref&lt;any[]&gt;([])
+</span></span></span><span class="line"><span class="cl"><span class="gd"></span><span class="gi">+  const list = ref&lt;VideoItem[]&gt;([])
+</span></span></span><span class="line"><span class="cl"><span class="gi"></span>
+</span></span><span class="line"><span class="cl">// 滚动触底触发
+</span></span><span class="line"><span class="cl">const onLoad = () =&gt; {
+</span></span><span class="line"><span class="cl">  // 根据当前页码提取数据
+</span></span><span class="line"><span class="cl"><span class="gd">-  const data = videoList.value?.slice((page - 1) * pageSize,page * pageSize) as any[]
+</span></span></span><span class="line"><span class="cl"><span class="gd"></span><span class="gi">+  const data = videoList.value?.slice((page - 1) * pageSize,page * pageSize) as VideoItem[]
+</span></span></span><span class="line"><span class="cl"><span class="gi"></span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h6 id="7动态路由传参">7.动态路由传参
+</h6><p>跳转路由传参：修改目录结构</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pages/video/index.vue  =&gt;   pages/video/[id].vue
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">其中 [id].vue  表示动态路由
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>点击跳转<code>video/index.vue</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="line"><span class="cl">&lt;NuxtLink
+</span></span><span class="line"><span class="cl">    class=&#34;v-card&#34;
+</span></span><span class="line"><span class="cl">    v-for=&#34;item in list&#34;
+</span></span><span class="line"><span class="cl">    :key=&#34;item.aid&#34;
+</span></span><span class="line"><span class="cl"><span class="gd">-    :to=&#34;`/video`&#34;
+</span></span></span><span class="line"><span class="cl"><span class="gd"></span><span class="gi">+    :to=&#34;`/video/${item.bvid}`&#34;
+</span></span></span><span class="line"><span class="cl"><span class="gi"></span>  &gt;
+</span></span><span class="line"><span class="cl">    ...
+</span></span><span class="line"><span class="cl">  &lt;/NuxtLink&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>页面中获取参数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-vue" data-lang="vue"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">setup</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;ts&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span> <span class="nx">params</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useRoute</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;动态路由id&#39;</span><span class="p">,</span> <span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">视频页</span> <span class="p">{{</span> <span class="nx">$route</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span> <span class="p">}}&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>视频详情接口：<code>server/api/video/[id].get.ts</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// get /api/video/id
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="nx">video</span> <span class="kr">from</span> <span class="s1">&#39;@/database/video&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">defineEventHandler</span><span class="p">((</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 获取路由参数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="p">{</span> <span class="nx">id</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">params</span> <span class="o">||</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// 根据 id 查找视频
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">return</span> <span class="nx">video</span><span class="p">.</span><span class="nx">find</span><span class="p">((</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">v</span><span class="p">.</span><span class="nx">bvid</span> <span class="o">===</span> <span class="nx">id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 ICE-Bear
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
